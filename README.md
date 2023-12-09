@@ -21,13 +21,13 @@ The official [wayland-protocols](https://gitlab.freedesktop.org/wayland/wayland-
 
 Allow applications to...
 
-* Capture the screen
-* Set global keyboard shortcuts
-* Get the process ID and other vital information (like in `xprop`)
-* Kill other applications
-* Set arbitrary window icons
-* Set key-value combinations on windows (atoms)
-* Position windows
-* (Feel free to suggest additional candidates)
+- [ ] Capture the screen
+- [ ] Set global keyboard shortcuts
+- [ ] Get the process ID and other vital information (like in `xprop`)
+- [ ] Kill other applications
+- [ ] Set arbitrary window icons
+- [ ] Set key-value combinations on windows (atoms)
+- [ ] Position windows
+- [ ] (Feel free to suggest additional candidates)
 
 ...just like in X11
