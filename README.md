@@ -6,7 +6,7 @@ The missing Wayland protocols for features that are available in X11 (but are de
 
 Allow applications to...
 
-- [ ] Capture the screen
+- [ ] Capture the screen (without Pipewire, Portals, etc.)
 - [ ] Set global keyboard shortcuts
 - [ ] Get the process ID and other vital information (like in `xprop`)
 - [ ] Kill other applications
