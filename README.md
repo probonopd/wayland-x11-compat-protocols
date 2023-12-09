@@ -2,6 +2,21 @@
 
 The missing Wayland protocols for features that are available in X11 (but are denied by the official Wayland protocols).
 
+## Protocols
+
+Allow applications to...
+
+- [ ] Capture the screen
+- [ ] Set global keyboard shortcuts
+- [ ] Get the process ID and other vital information (like in `xprop`)
+- [ ] Kill other applications
+- [ ] Set arbitrary window icons
+- [ ] Set key-value combinations on windows (atoms)
+- [ ] Position windows
+- [ ] (Feel free to suggest additional candidates)
+
+...just like in X11
+
 ## Motivation
 
 The official [wayland-protocols](https://gitlab.freedesktop.org/wayland/wayland-protocols) project has not provided protocols for essential functionality known from X11, hence preventing application developers and desktop environment developers from having a smooth transition path from X11 to Wayland with feature parity.
@@ -16,18 +31,3 @@ The official [wayland-protocols](https://gitlab.freedesktop.org/wayland/wayland-
 * Parameters should ideally be the same as in the corresponding X11 API
 * This is a volunteer-based community effort. Your contributions are highly welcome!
 * `wayland-x11-compat-protocols` is a working title. Suggestions, anyone?
-
-## Protocols wanted
-
-Allow applications to...
-
-- [ ] Capture the screen
-- [ ] Set global keyboard shortcuts
-- [ ] Get the process ID and other vital information (like in `xprop`)
-- [ ] Kill other applications
-- [ ] Set arbitrary window icons
-- [ ] Set key-value combinations on windows (atoms)
-- [ ] Position windows
-- [ ] (Feel free to suggest additional candidates)
-
-...just like in X11
