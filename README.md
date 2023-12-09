@@ -2,6 +2,10 @@
 
 The missing Wayland protocols for features that are available in X11 (but are denied by the official Wayland protocols).
 
+> Es gibt nichts Gutes ― außer man tut es.
+
+Erich Kästner
+
 ## Protocols
 
 Allow applications to...
