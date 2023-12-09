@@ -18,10 +18,15 @@ The official [wayland-protocols](https://gitlab.freedesktop.org/wayland/wayland-
 
 ## Protocols wanted
 
-* Allow applications to capture the screen just like in X11
-* Allow applications to set global keyboard shortcuts just like in X11
-* Allow applications to kill other applications just like in X11
-* Allow applications to set arbitrary window icons just like in X11
-* Allow applications to set key-value combinations on windows (atoms) like in X11
-* Allow windows to position themselves just like in X11
+Allow applications to...
+
+* Capture the screen
+* Set global keyboard shortcuts
+* Get the process ID and other vital information (like in `xprop`)
+* Kill other applications
+* Set arbitrary window icons
+* Set key-value combinations on windows (atoms)
+* Position windows
 * (Feel free to suggest additional candidates)
+
+...just like in X11
