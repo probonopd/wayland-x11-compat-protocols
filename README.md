@@ -8,7 +8,7 @@ Erich Kästner
 
 ## Protocols
 
-Allow applications to...
+Allow applications to do what they can do in X11...
 
 - [ ] Capture the screen (without Pipewire, Portals, etc.)
 - [ ] Set global keyboard shortcuts
@@ -19,7 +19,7 @@ Allow applications to...
 - [ ] Arbitrarily position windows (see [ext-placement](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/247))
 - [ ] (Feel free to suggest additional candidates)
 
-...just like in X11
+...unencumbered. Because the windowing system is not a sandbox, and applications should be allowed whatever they want to do.
 
 ## Motivation
 
@@ -38,6 +38,6 @@ The official [wayland-protocols](https://gitlab.freedesktop.org/wayland/wayland-
 
 ## But... security.
 
-The window system is not the place to restrict what applications are and are not allowed to do.
+The windowing system is not the place to restrict what applications are and are not allowed to do.
 
 If you want to restrict what applications can do, use a sandbox.
