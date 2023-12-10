@@ -14,7 +14,7 @@ Allow applications to do what they can do in X11...
 - [ ] Set global keyboard shortcuts
 - [ ] Get the process ID and other vital information (like in `xprop`)
 - [ ] Kill other applications
-- [ ] Set arbitrary window icons (see [ext-window-icon](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/269))
+- [ ] Set arbitrary window icons with no need for `.desktop` files (see [ext-window-icon](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/269))
 - [ ] Set key-value combinations on windows (atoms)
 - [ ] Arbitrarily position windows (see [ext-placement](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/247))
 - [ ] (Feel free to suggest additional candidates)
