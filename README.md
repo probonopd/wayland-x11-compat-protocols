@@ -8,7 +8,7 @@ Erich Kästner
 
 ## Protocols
 
-Allow applications to do what they can do in X11...
+Allow applications and desktop environments (and abstractions like [libxfce4windowing](https://gitlab.xfce.org/xfce/libxfce4windowing)) to do what they can do in X11...
 
 - [ ] Capture the screen (without Pipewire, Portals, etc.)
 - [ ] Set global keyboard shortcuts
