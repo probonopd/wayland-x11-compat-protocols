@@ -16,7 +16,7 @@ Allow applications to...
 - [ ] Kill other applications
 - [ ] Set arbitrary window icons
 - [ ] Set key-value combinations on windows (atoms)
-- [ ] Position windows
+- [ ] Arbitrarily position windows ([declined in wayland-protocols](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/249))
 - [ ] (Feel free to suggest additional candidates)
 
 ...just like in X11
