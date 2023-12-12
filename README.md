@@ -20,7 +20,7 @@ Allow applications and desktop environments (and abstractions like [libxfce4wind
 - [ ] Drag-and-drop between applications (without Portals, etc.)
 - [ ] (Feel free to suggest additional candidates)
 
-...unencumbered. Because the windowing system is not a sandbox, and applications should be allowed whatever they want to do.
+...unencumbered, and without additional software besides the Wayland compositor (such as Pipewire, Portals, .desktop files, etc.).
 
 ## Motivation
 
