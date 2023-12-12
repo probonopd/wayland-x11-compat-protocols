@@ -17,6 +17,7 @@ Allow applications and desktop environments (and abstractions like [libxfce4wind
 - [ ] Set arbitrary window icons with no need for `.desktop` files (see [ext-window-icon](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/269))
 - [ ] Set key-value combinations on windows (atoms)
 - [ ] Arbitrarily position windows (see [ext-placement](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/247))
+- [ ] Drag-and-drop between applications (without Portals, etc.)
 - [ ] (Feel free to suggest additional candidates)
 
 ...unencumbered. Because the windowing system is not a sandbox, and applications should be allowed whatever they want to do.
