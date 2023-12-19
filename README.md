@@ -10,6 +10,7 @@ Erich Kästner
 
 Allow applications and desktop environments (and abstractions like [libxfce4windowing](https://gitlab.xfce.org/xfce/libxfce4windowing)) to do what they can do in X11...
 
+- [ ] Handle _windows_ (not: "surfaces") like in X11 (window ID, etc.)
 - [ ] Capture the screen (without Pipewire, Portals, etc.)
 - [ ] Set global keyboard shortcuts (without Portals, etc.)
 - [ ] Get the process ID and other vital information (like in `xprop`) and kill other applications (like `xkill`)
