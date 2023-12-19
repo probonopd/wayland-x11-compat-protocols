@@ -17,6 +17,9 @@ Allow applications and desktop environments (and abstractions like [libxfce4wind
 - [ ] Set key-value combinations on windows (atoms)
 - [ ] Arbitrarily position windows (see [ext-placement](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/247))
 - [ ] Drag-and-drop between applications (without Portals, etc.)
+- [ ] Client data query (e.g., window/surface positions, cursor position with xhot/yhot position, keyboard state, window geometries; AT-SPI2 is very limited)
+- [ ] An equivalent to XTEST (ability to send keystrokes, move the cursor, move/resize windows and so on; `ydotool` is somewhat limited)
+- [ ] Frame callback-less rendering (ability to submit new frames at any time) (assuming it doesn't exist yet)
 - [ ] (Feel free to suggest additional candidates)
 
 ...unencumbered, and without additional software besides the Wayland compositor (such as Pipewire, Portals, .desktop files, etc.).
