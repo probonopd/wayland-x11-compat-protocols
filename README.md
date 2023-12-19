@@ -12,8 +12,7 @@ Allow applications and desktop environments (and abstractions like [libxfce4wind
 
 - [ ] Capture the screen (without Pipewire, Portals, etc.)
 - [ ] Set global keyboard shortcuts (without Portals, etc.)
-- [ ] Get the process ID and other vital information (like in `xprop`)
-- [ ] Kill other applications (like `xkill`)
+- [ ] Get the process ID and other vital information (like in `xprop`) and kill other applications (like `xkill`)
 - [ ] Set arbitrary window icons with no need for `.desktop` files (see [ext-window-icon](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/269))
 - [ ] Set key-value combinations on windows (atoms)
 - [ ] Arbitrarily position windows (see [ext-placement](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/247))
