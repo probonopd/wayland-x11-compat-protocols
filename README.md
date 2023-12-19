@@ -17,7 +17,7 @@ Allow applications and desktop environments (and abstractions like [libxfce4wind
 - [ ] Set arbitrary window icons with no need for `.desktop` files (see [ext-window-icon](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/269))
 - [ ] Set key-value combinations on windows (atoms)
 - [ ] Arbitrarily position windows (see [ext-placement](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/247))
-- [ ] Drag-and-drop between applications (without Portals, etc.)
+- [ ] Drag-and-drop between applications (There is `wl_data_offer`, but why can't we drag files from an archive manager to the file manager in Raspberry Pi OS then)? 
 - [ ] Client data query (e.g., window/surface positions, cursor position with xhot/yhot position, keyboard state, window geometries; AT-SPI2 is very limited)
 - [ ] An equivalent to XTEST (ability to send keystrokes, move the cursor, move/resize windows and so on; `ydotool` is somewhat limited)
 - [ ] Frame callback-less rendering (ability to submit new frames at any time) (assuming it doesn't exist yet)
