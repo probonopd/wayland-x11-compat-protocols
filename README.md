@@ -11,9 +11,9 @@ Erich Kästner
 Allow applications and desktop environments (and abstractions like [libxfce4windowing](https://gitlab.xfce.org/xfce/libxfce4windowing)) to do what they can do in X11...
 
 - [ ] Handle _windows_ (not: "surfaces") like in X11 (window ID, etc.)
-- [ ] Capture the screen (without Pipewire, Portals, etc.)
+- [ ] Capture the screen (without Pipewire, Portals, etc. see [ext-screencopy-v1](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/124))
 - [ ] Set global keyboard shortcuts (without Portals, etc.)
-- [ ] Get the process ID and other vital information (like in `xprop`) and kill other applications (like `xkill`)
+- [ ] Get the process ID and other vital information (like in `xprop`) and kill other applications (like `xkill`) (for partial support see [ext-foreign-toplevel-list](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/187) and [ext-foreign-toplevel-state](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/196))
 - [ ] Set arbitrary window icons with no need for `.desktop` files (see [ext-window-icon](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/269))
 - [ ] Set key-value combinations on windows (atoms)
 - [ ] Arbitrarily position windows (see [ext-placement](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/247))
