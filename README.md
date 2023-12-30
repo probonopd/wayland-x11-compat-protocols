@@ -44,4 +44,4 @@ The official [wayland-protocols](https://gitlab.freedesktop.org/wayland/wayland-
 
 The windowing system is not the place to restrict what applications are and are not allowed to do.
 
-If you want to restrict what applications can do, use a sandbox.
+If you want to restrict what applications can do, use a sandbox (or disallow these protocols in your compositor via a configuration setting).
