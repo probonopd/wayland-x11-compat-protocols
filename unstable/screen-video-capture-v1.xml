@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE protocol SYSTEM "wayland.dtd">
+
+<description summary="Capture the video contents of a desktop or its individual screens or windows without Portals and Pipewire">
+
+<!-- This is a proposed Wayland protocol to simplify porting existing applications from X11, Windows, macOS to Wayland
+while keeping the existing application logic as much as possible, and without dependencies other than the Wayland compositor. 
+Please do send pull requests to improve the protocol, but please keep it as simple as possible. -->
+
+<protocol name="screen_video_capture_v1">
+    <interface name="ext_screen_video_capture_v1" version="1">
+        <!-- Interface description -->
+        <description summary="Capture the video contents of a desktop or its individual screens or windows without Portals and Pipewire">
+            This interface allows clients to capture the video contents of a desktop or its individual screens or windows without additional interaction with the user.
+            This is useful for screen recording, screen sharing and similar applications.
+
+            When you capture screen video, the raw pixel data is provided by the Wayland compositor in the frame event.
+            This raw data is then passed to the requesting application, which is responsible for encoding the data into a video format.
+            
+            To synchronize the video with audio, the application should use the presentation time of the frame event.
+            The presentation time is the time at which the frame should be displayed to the user.
+            The application should use this time when encoding the video frame.
+        </description>
+
+        <!-- Request to start capturing video -->
+        <request name="start_capture">
+            <description summary="start capturing video">
+                Start capturing video of the whole desktop (default) or a single screen or window.
+
+                To capture the whole desktop, pass NULL as the target.
+                
+                To capture a single screen, pass the wl_output of the screen as the target.
+                (A wl_output represents a physical screen. Each screen has a wl_output object.)
+
+                To capture a single window, pass the zwlr_foreign_toplevel_handle of the window as the target.
+                (A zwlr_foreign_toplevel_handle_v1 represents an open toplevel window. Each application may have multiple open toplevel windows.)
+            </description>
+            <arg name="target" type="object"/>
+        </request>
+
+        <!-- Request to stop capturing video -->
+        <request name="stop_capture">
+            <description summary="stop capturing video">
+                Stop capturing video.
+            </description>
+        </request>
+
+        <!-- Event for a frame in the video -->
+        <event name="frame">
+            <description summary="a frame in the video">
+                This event provides the frame data.
+            </description>
+            <arg name="buffer" type="object" interface="wl_buffer">
+                <description>
+                    The buffer containing the frame data.
+                </description>
+            </arg>
+            <arg name="when" type="uint" summary="presentation time">
+                <description>
+                    The presentation time of the frame.
+                    This is the time at which the frame should be displayed to the user.
+                    The application should use this time when encoding the video frame.
+                </description>
+            </arg>
+        </event>
+
+        <!-- Event indicating the end of capture -->
+        <event name="done">
+            <description summary="end of capture">
+                This event indicates that the capture has ended.
+            </description>
+        </event>
+    </interface>
+</protocol>
