@@ -45,6 +45,35 @@ Please do send pull requests to improve the protocol, but please keep it as simp
             <arg name="name" type="string"/>
         </request>
 
+        <request name="get_process_id">
+            <description summary="get the process ID of a window">
+                Request the process ID of the application that created a window. The process ID will be returned in a 'process_id' event.
+            </description>
+            <arg name="window" type="object" interface="xdg_toplevel"/>
+        </request>
+
+        <event name="process_id">
+            <description summary="the process ID of a window">
+                This event provides the process ID of a window requested with the 'get_process_id' request. This is conceptually similar to _NET_WM_PID in X11.
+            </description>
+            <arg name="process_id" type="int"/>
+        </event>
+
+        <request name="get_application_path">
+            <description summary="get the path of the application that created a window">
+                Request the absolute path in the filesystem of the application that created a window. The path will be returned in a 'application_path' event.
+            </description>
+            <arg name="window" type="object" interface="xdg_toplevel"/>
+        </request>
+
+        <event name="application_path">
+            <description summary="the path of the application that created a window">
+                This event provides the absolute path requested with the 'get_application_path' request.
+                This is conceptually similar to resolving /proc/_NET_WM_PID/exe in X11.
+            </description>
+            <arg name="application_path" type="string"/>
+        </event>
+
         <event name="string_property">
             <description summary="a string property from a window">
                 This event provides the value of a property requested with the 'get_string_property' request. This is conceptually similar to an X11 atom containing a string.
