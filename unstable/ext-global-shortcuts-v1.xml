@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE protocol SYSTEM "wayland.dtd">
+
+<!-- This is a proposed Wayland protocol to simplify porting existing applications from X11 to Wayland
+while keeping the existing application logic as much as possible, and without dependencies other than the Wayland compositor. 
+Please do send pull requests to improve the protocol, but please keep it as simple as possible. -->
+
+<protocol name="global_shortcuts">
+    <interface name="ext_global_shortcuts_v1" version="1">
+        <description summary="set and unset global shortcuts">
+            This interface allows clients to set and unset global shortcuts.
+        </description>
+
+        <request name="set_shortcut">
+            <description summary="set a global shortcut">
+                Set a global shortcut. The shortcut is identified by the 'keys' argument, and the action is identified by the 'action' argument.
+                If the shortcut is already set, it is replaced by the new one.
+            </description>
+            <arg name="keys" type="string"/>
+            <arg name="action" type="string"/>
+        </request>
+
+        <request name="unset_shortcut">
+            <description summary="unset a global shortcut">
+                Unset a global shortcut. The shortcut is identified by the 'keys' argument.
+            </description>
+            <arg name="keys" type="string"/>
+        </request>
+
+        <request name="check_shortcut">
+            <description summary="check if a global shortcut is set">
+                Check if a global shortcut is set by any application. The shortcut is identified by the 'keys' argument.
+                If the shortcut is set, the 'action' argument is set to the action associated with the shortcut.
+                If the shortcut is not set, the 'action' argument is set to the empty string.
+            </description>
+            <arg name="keys" type="string"/>
+            <arg name="action" type="string"/>
+        </request>
+
+        <event name="shortcut_triggered">
+            <description summary="a global shortcut was triggered">
+                This event is sent when a global shortcut is triggered. The shortcut is identified by the 'keys' argument.
+                If more than one application has set the same shortcut, the one that last set it is triggered.
+            </description>
+            <arg name="keys" type="string"/>
+        </event>
+    </interface>
+</protocol>
