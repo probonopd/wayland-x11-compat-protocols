@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE protocol SYSTEM "wayland.dtd">
+
+<!-- This is a proposed Wayland protocol to simplify porting existing applications from X11 to Wayland
+while keeping the existing application logic as much as possible, and without dependencies other than the Wayland compositor. 
+Please do send pull requests to improve the protocol, but please keep it as simple as possible. -->
+
+<protocol name="window_properties_v1">
+    <interface name="ext_window_properties_v1" version="1">
+        <description summary="set and read properties on Wayland toplevel windows">
+            This interface allows clients to set and read properties on Wayland toplevel windows, conceptually similar to X11 atoms.
+        </description>
+
+        <request name="set_string_property">
+            <description summary="set a property on a window">
+                Set a property on a window. The property is identified by the 'name' argument, and the value is a string.
+            </description>
+            <arg name="window" type="object" interface="xdg_toplevel"/>
+            <arg name="name" type="string"/>
+            <arg name="value" type="string"/>
+        </request>
+
+        <request name="get_string_property">
+            <description summary="get a property from a window">
+                Request a property from a window. The property is identified by the 'name' argument. The value will be returned in a 'property' event.
+            </description>
+            <arg name="window" type="object" interface="xdg_toplevel"/>
+            <arg name="name" type="string"/>
+        </request>
+
+        <request name="set_int_property">
+            <description summary="set a property on a window">
+                Set a property on a window. The property is identified by the 'name' argument, and the value is an integer.
+            </description>
+            <arg name="window" type="object" interface="xdg_toplevel"/>
+            <arg name="name" type="string"/>
+            <arg name="value" type="int"/>
+        </request>
+
+        <request name="get_int_property">
+            <description summary="get a property from a window">
+                Request a property from a window. The property is identified by the 'name' argument. The value will be returned in a 'property' event.
+            </description>
+            <arg name="window" type="object" interface="xdg_toplevel"/>
+            <arg name="name" type="string"/>
+        </request>
+
+        <event name="string_property">
+            <description summary="a string property from a window">
+                This event provides the value of a property requested with the 'get_string_property' request.
+            </description>
+            <arg name="name" type="string"/>
+            <arg name="value" type="string"/>
+        </event>
+
+        <event name="int_property">
+            <description summary="an integer property from a window">
+                This event provides the value of a property requested with the 'get_int_property' request.
+            </description>
+            <arg name="name" type="string"/>
+            <arg name="value" type="int"/>
+        </event>
+
+        <request name="set_icon">
+            <description summary="set the icon of a window">
+                Set the icon of a window. The icon is identified by the 'icon' argument, and the value is an array of wl_buffer objects, each representing an icon in a different size.
+                A wl_buffer is a Wayland object that contains raw pixel data.
+            </description>
+            <arg name="window" type="object" interface="xdg_toplevel"/>
+            <arg name="icons" type="array" interface="wl_buffer"/>
+        </request>
+        
+        <request name="get_icons">
+            <description summary="get the icons of a window">
+                Request the icons of a window. The icons will be returned in an 'icons' event.
+            </description>
+            <arg name="window" type="object" interface="xdg_toplevel"/>
+        </request>
+
+        <event name="icons">
+            <description summary="icons from a window">
+                This event provides the icons of a window requested with the 'get_icons' request.
+            </description>
+            <arg name="icons" type="array" interface="wl_buffer"/>
+        </event>
+    </interface>
+</protocol>
