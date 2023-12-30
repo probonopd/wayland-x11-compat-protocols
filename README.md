@@ -16,7 +16,7 @@ Allow applications and desktop environments (and abstractions like [libxfce4wind
 - [x] `window_properties_v1` Get the process ID and other vital information (like in `xprop`) and kill other applications (like `xkill`) (for partial support see [ext-foreign-toplevel-list](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/187) and [ext-foreign-toplevel-state](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/196))
 - [x] `window_properties_v1`: Set arbitrary window icons with no need for `.desktop` files (see [ext-window-icon](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/269))
 - [x] `window_properties_v1`: Set key-value combinations on windows (atoms)
-- [ ] Arbitrarily position windows (see [ext-placement](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/247))
+- [ ] `window_management_v1`: Arbitrarily position windows (see [ext-placement](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/247))
 - [ ] Drag-and-drop between applications (There is `wl_data_offer`, but why can't we drag files from an archive manager to the file manager in Raspberry Pi OS then? We need a solution [without kludges like Portals and FUSE](https://gitlab.gnome.org/AlynxZhou/file-roller/-/commit/80f53ece6714c89f604a80d60a2153e7599060fd)) 
 - [ ] Client data query (e.g., window/surface positions, cursor position with xhot/yhot position, keyboard state, window geometries; AT-SPI2 is very limited)
 - [ ] An equivalent to XTEST (ability to send keystrokes, move the cursor, move/resize windows and so on; `ydotool` is somewhat limited)
