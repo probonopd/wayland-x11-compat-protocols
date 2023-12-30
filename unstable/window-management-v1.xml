@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE protocol SYSTEM "wayland.dtd">
+
+<!-- This is a proposed Wayland protocol to simplify porting existing applications from X11 to Wayland
+while keeping the existing application logic as much as possible, and without dependencies other than the Wayland compositor. 
+Please do send pull requests to improve the protocol, but please keep it as simple as possible. -->
+
+<protocol name="window_management_v1">
+    <interface name="ext_window_management_v1" version="1">
+        <description summary="manage window position, size, focus, and monitor">
+            This interface allows clients to manage the position, size, focus, and screen of their windows, similar to X11.
+        </description>
+
+        <request name="set_position">
+            <description summary="set the position of a window">
+                Set the position of a window. The position is identified by the 'x' and 'y' arguments.
+            </description>
+            <arg name="window" type="object" interface="xdg_toplevel"/>
+            <arg name="x" type="int"/>
+            <arg name="y" type="int"/>
+        </request>
+
+        <request name="set_size">
+            <description summary="set the size of a window">
+                Set the size of a window. The size is identified by the 'width' and 'height' arguments.
+            </description>
+            <arg name="window" type="object" interface="xdg_toplevel"/>
+            <arg name="width" type="int"/>
+            <arg name="height" type="int"/>
+        </request>
+
+        <request name="set_focus">
+            <description summary="set the input focus to a window">
+                Set the input focus to a window. This raises the window to the top of the stack and activates it to receive keyboard input.
+            </description>
+            <arg name="window" type="object" interface="xdg_toplevel"/>
+        </request>
+
+        <request name="set_output">
+            <description summary="set the output a window is displayed on">
+                Set the output (e.g., physical screen) a window is displayed on. The output is identified by the 'output' argument.
+            </description>
+            <arg name="window" type="object" interface="xdg_toplevel"/>
+            <arg name="output" type="object" interface="wl_output"/>
+        </request>
+
+        <request name="set_strut">
+            <description summary="set the strut of a window">
+                Set the strut of a window. The strut is identified by the 'left', 'right', 'top', and 'bottom' arguments.
+                The compositor shall not place other windows in the areas defined by the struts.
+                This is useful for, e.g., panels and task bars.
+            </description>
+            <arg name="window" type="object" interface="xdg_toplevel"/>
+            <arg name="left" type="int"/>
+            <arg name="right" type="int"/>
+            <arg name="top" type="int"/>
+            <arg name="bottom" type="int"/>
+        </request>
+
+    </interface>
+</protocol>
