@@ -47,7 +47,7 @@ Please do send pull requests to improve the protocol, but please keep it as simp
 
         <event name="string_property">
             <description summary="a string property from a window">
-                This event provides the value of a property requested with the 'get_string_property' request.
+                This event provides the value of a property requested with the 'get_string_property' request. This is conceptually similar to an X11 atom containing a string.
             </description>
             <arg name="name" type="string"/>
             <arg name="value" type="string"/>
@@ -55,7 +55,7 @@ Please do send pull requests to improve the protocol, but please keep it as simp
 
         <event name="int_property">
             <description summary="an integer property from a window">
-                This event provides the value of a property requested with the 'get_int_property' request.
+                This event provides the value of a property requested with the 'get_int_property' request. This is conceptually similar to an X11 atom containing an integer.
             </description>
             <arg name="name" type="string"/>
             <arg name="value" type="int"/>
@@ -72,14 +72,14 @@ Please do send pull requests to improve the protocol, but please keep it as simp
         
         <request name="get_icons">
             <description summary="get the icons of a window">
-                Request the icons of a window. The icons will be returned in an 'icons' event.
+                Request the icons of a window. The icons will be returned in an 'icons' event. This is conceptually similar to _NET_WM_ICON in X11.
             </description>
             <arg name="window" type="object" interface="xdg_toplevel"/>
         </request>
 
         <event name="icons">
             <description summary="icons from a window">
-                This event provides the icons of a window requested with the 'get_icons' request.
+                This event provides the icons of a window requested with the 'get_icons' request. This is conceptually similar to _NET_WM_ICON in X11.
             </description>
             <arg name="icons" type="array" interface="wl_buffer"/>
         </event>
