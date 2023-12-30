@@ -45,3 +45,7 @@ The official [wayland-protocols](https://gitlab.freedesktop.org/wayland/wayland-
 The windowing system is not the place to restrict what applications are and are not allowed to do.
 
 If you want to restrict what applications can do, use a sandbox (or disallow these protocols in your compositor via a configuration setting).
+
+## Also see
+
+https://gitlab.freedesktop.org/wlroots/wlr-protocols/ - it seems to be addressing a few of the missing Wayland protocols. Unfortunately not all Wayland compositors are built on wlroots yet, so those may or may not work on your desktop.
