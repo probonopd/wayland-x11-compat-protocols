@@ -13,7 +13,7 @@ Please do send pull requests to improve the protocol, but please keep it as simp
 
         <request name="set_position">
             <description summary="set the position of a window">
-                Set the position of a window. The position is identified by the 'x' and 'y' arguments.
+                Set the position of a window. The position is identified by the 'x' and 'y' arguments. Conceptually, this is similar to X11's XMoveWindow().
             </description>
             <arg name="window" type="object" interface="xdg_toplevel"/>
             <arg name="x" type="int"/>
@@ -22,16 +22,23 @@ Please do send pull requests to improve the protocol, but please keep it as simp
 
         <request name="set_size">
             <description summary="set the size of a window">
-                Set the size of a window. The size is identified by the 'width' and 'height' arguments.
+                Set the size of a window. The size is identified by the 'width' and 'height' arguments. Conceptually, this is similar to X11's XResizeWindow().
             </description>
             <arg name="window" type="object" interface="xdg_toplevel"/>
             <arg name="width" type="int"/>
             <arg name="height" type="int"/>
         </request>
 
+        <request name="raise_window">
+            <description summary="set the input focus to a window">
+                This raises the window to the top of the stack. Conceptually, this is similar to X11's XRaiseWindow().
+            </description>
+            <arg name="window" type="object" interface="xdg_toplevel"/>
+        </request>
+
         <request name="set_focus">
             <description summary="set the input focus to a window">
-                Set the input focus to a window. This raises the window to the top of the stack and activates it to receive keyboard input.
+                This activates the window to receive keyboard input. Conceptually, this is similar to X11's XSetInputFocus().
             </description>
             <arg name="window" type="object" interface="xdg_toplevel"/>
         </request>
@@ -46,7 +53,7 @@ Please do send pull requests to improve the protocol, but please keep it as simp
 
         <request name="set_strut">
             <description summary="set the strut of a window">
-                Set the strut of a window. The strut is identified by the 'left', 'right', 'top', and 'bottom' arguments.
+                Set the strut of a window. The strut is identified by the 'left', 'right', 'top', and 'bottom' arguments. Conceptually, this is similar to X11's _NET_WM_STRUT_PARTIAL and _NET_WM_STRUT.
                 The compositor shall not place other windows in the areas defined by the struts.
                 This is useful for, e.g., panels and task bars.
             </description>
