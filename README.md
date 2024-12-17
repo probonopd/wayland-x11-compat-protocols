@@ -52,3 +52,21 @@ If you want to restrict what applications can do, use a sandbox (or disallow the
 ## Also see
 
 https://gitlab.freedesktop.org/wlroots/wlr-protocols/ - it seems to be addressing a few of the missing Wayland protocols. Unfortunately not all Wayland compositors are built on wlroots yet, so those may or may not work on your desktop.
+
+https://lists.freedesktop.org/archives/wayland-devel/2024-April/043583.html
+
+Pekka Paalanen wrote on Apr 29 12:43:30 UTC 2024:
+
+> I recently wrote up
+https://gitlab.freedesktop.org/wayland/wayland-protocols/-/issues/194
+in a search for a compromise between Wayland and applications that will
+not be re-designed according to the Wayland principles and would remain
+crippled. The basic idea there is to introduce "legacy compatibility
+extensions" as a stop-gap measure and eventually stop using them for
+those cases where both the application and the toolkits it uses are
+still actively developed. It was met with justified criticism, and it
+was not intended as a future proof solution for any application in the
+first place.
+
+* https://lists.freedesktop.org/archives/wayland-devel/2024-April/043583.html
+* https://gitlab.freedesktop.org/wayland/wayland-protocols/-/issues/194 ("I see very little support, and a lot of objection to this proposal. Therefore the proposal is rejected.")
